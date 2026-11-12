@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
-//added global API error handling
+// Central place for returning consistent JSON errors across the whole API.
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 

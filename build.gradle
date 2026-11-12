@@ -29,6 +29,9 @@ dependencies {
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.12.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.12.5'
 
+    // Stripe Java SDK for hosted checkout and payment sessions.
+    implementation 'com.stripe:stripe-java:25.10.0'
+
     runtimeOnly 'org.postgresql:postgresql'
 
     compileOnly 'org.projectlombok:lombok'

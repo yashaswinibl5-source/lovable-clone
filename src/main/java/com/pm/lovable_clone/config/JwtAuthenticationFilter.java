@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.UUID;
 
-@Component
+@Component // Spring registers this filter automatically for every incoming HTTP request.
 @RequiredArgsConstructor
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 

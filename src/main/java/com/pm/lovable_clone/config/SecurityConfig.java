@@ -41,6 +41,10 @@ public class SecurityConfig {
                 .requestMatchers("/api/v1/auth/**").permitAll()
                 // SSE generator endpoint is public for the live preview flow.
                 .requestMatchers("/api/v1/generator/**").permitAll()
+                // Payment success/cancel pages are public because Stripe redirects users here.
+                .requestMatchers("/api/v1/payments/success", "/api/v1/payments/cancel").permitAll()
+                // Stripe webhook must be public because Stripe calls it without a user JWT.
+                .requestMatchers("/api/v1/stripe/webhook").permitAll()
                 // Any other endpoint requires a valid JWT in the Authorization header.
                 .anyRequest().authenticated()
             )
@@ -85,3 +89,7 @@ public class SecurityConfig {
 //
 //So the flow is:
 //Login → JWT issued → Request includes JWT → Filter validates JWT → SecurityContext set → API allows request.
+
+
+
+//stage 3-->
